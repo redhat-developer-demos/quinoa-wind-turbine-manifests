@@ -100,10 +100,10 @@ spec:
       workspace: source
   - name: git-update-deployment
     params:
-    - name: MANIFESTS_GIT_REPOSITORY
-      value: $(params.GIT_REPO)
-    - name: MANIFESTS_GIT_REF
-      value: $(params.GIT_BRANCH)
+    - name: GIT_REPOSITORY
+      value: $(params.MANIFESTS_GIT_REPO)
+    - name: GIT_REF
+      value: $(params.MANIFESTS_GIT_BRANCH)
     - name: NEW_IMAGE
       value: quay.io/rhdevelopers/quinoa-wind-turbine
     - name: NEW_DIGEST
