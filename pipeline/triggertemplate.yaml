@@ -1,0 +1,33 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerTemplate
+metadata:
+  name: wind-turbine
+spec:
+  params:
+    - name: git-revision
+    - name: git-commit-message
+    - name: git-repo-url
+    - name: git-repo-name
+    - name: content-type
+    - name: pusher-name
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1beta1
+      kind: PipelineRun
+      metadata:
+        generateName: wind-turbine-pipeline-
+        labels:
+          tekton.dev/pipeline: wind-turbine-pipeline
+      spec:
+        params:
+          - name: GIT_REPO
+            value: $(tt.params.git-repo-url)
+          - name: GIT_BRANCH
+            value: $(tt.params.git-revision)
+        pipelineRef:
+          name: wind-turbine-pipeline
+        workspaces:
+        - name: source
+          persistentVolumeClaim:
+            claimName: app-source
+        - name: maven-settings
+          emptyDir: {}
