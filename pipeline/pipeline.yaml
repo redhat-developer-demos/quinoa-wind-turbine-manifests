@@ -54,7 +54,7 @@ spec:
   - name: maven
     params:
     - name: MAVEN_IMAGE
-      value: quay.io/rhdevelopers/maven-nodejs:latest
+      value: maven:3.8.6-openjdk-18
     - name: GOALS
       value:
       - package
