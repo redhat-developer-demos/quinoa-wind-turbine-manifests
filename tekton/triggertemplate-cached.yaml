@@ -31,6 +31,6 @@ spec:
               claimName: app-source
           - name: maven-repo
             persistentVolumeClaim:
-              claimName: maven-repo-pvc
+              claimName: maven-repo
           - emptyDir: {}
             name: maven-settings
