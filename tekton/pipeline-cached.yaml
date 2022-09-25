@@ -68,7 +68,7 @@ spec:
         - git-clone
       taskRef:
         kind: Task
-        name: cached-maven
+        name: maven-cached
       workspaces:
         - name: maven-settings
           workspace: maven-settings
