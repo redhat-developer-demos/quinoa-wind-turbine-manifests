@@ -163,3 +163,7 @@ spec:
       name: maven-settings
     - description: M2 dir workspace
       name: maven-repo
+    - description: Node install cache
+      name: node-cache
+    - description: NPM repo
+      name: npm-repo
