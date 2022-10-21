@@ -58,6 +58,8 @@ spec:
         - name: GOALS
           value:
             - package
+            - "-Dquarkus.quinoa.package-manager-install.install-dir=$(workspaces.node-cache.path)"
+            - "-Dquarkus.quinoa.package-manager-command.install-env.NPM_CONFIG_CACHE=$(workspaces.npm-repo.path)"
         - name: PROXY_PROTOCOL
           value: http
         - name: CONTEXT_DIR
@@ -76,6 +78,10 @@ spec:
           workspace: source
         - name: maven-repo
           workspace: maven-repo
+        - name: node-cache
+          workspace: node-cache
+        - name: npm-repo
+          workspace: npm-repo
     - name: buildah
       params:
         - name: IMAGE
@@ -127,3 +133,5 @@ spec:
     - name: source
     - name: maven-settings
     - name: maven-repo
+    - name: node-cache
+    - name: npm-repo
