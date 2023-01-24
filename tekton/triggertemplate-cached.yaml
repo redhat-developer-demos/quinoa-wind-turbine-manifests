@@ -31,15 +31,15 @@ spec:
               claimName: app-source
           - name: maven-repo
             persistentVolumeClaim:
-              claimName: build-cache-pvc
+              claimName: build-cache
             subPath: maven-repo
           - name: node-cache
             persistentVolumeClaim:
-              claimName: build-cache-pvc
+              claimName: build-cache
             subPath: node-cache
           - name: npm-repo
             persistentVolumeClaim:
-              claimName: build-cache-pvc
+              claimName: build-cache
             subPath: npm-repo
           - emptyDir: {}
             name: maven-settings
