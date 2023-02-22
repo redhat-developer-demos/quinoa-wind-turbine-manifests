@@ -7,5 +7,5 @@ kind: Kustomization
 images:
 - digest: sha256:063ad9f040ec7fec2887caf7006b377a0b82cd0756ca8406e4629695039e5450
   name: quay.io/burrsutter/quinoa-wind-turbine
-- digest: sha256:32cd141a2d335af43e62dfc8e60615c875c3203f59113925f4c46e621e09a134
+- digest: sha256:bf4703abc67ff6c9f24904df2c6493f61e4ed5af83058c7dcc5cfd11fdccfa4d
   name: quay.io/rhdevelopers/quinoa-wind-turbine
