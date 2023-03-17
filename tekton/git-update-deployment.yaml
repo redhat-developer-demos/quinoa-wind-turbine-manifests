@@ -4,15 +4,10 @@ metadata:
   annotations:
     tekton.dev/pipelines.minVersion: 0.12.1
     tekton.dev/tags: git
-  creationTimestamp: "2022-09-07T11:25:47Z"
-  generation: 3
   labels:
     app.kubernetes.io/version: "0.2"
     operator.tekton.dev/provider-type: community
   name: git-update-deployment
-  namespace: demo
-  resourceVersion: "1644521"
-  uid: 4cb0f0f9-0c8a-4b12-82b6-8813aa9b5819
 spec:
   description: This Task can be used to update image digest in a Git repo using kustomize.
     It requires a secret with credentials for accessing the git repo.

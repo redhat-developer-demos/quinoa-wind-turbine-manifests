@@ -29,6 +29,8 @@ spec:
       labels:
         app: quinoa-wind-turbine
         deployment: quinoa-wind-turbine
+      annotations:
+        sidecar.istio.io/inject: 'true'
     spec:
       containers:
       - env:
