@@ -2,3 +2,8 @@ resources:
 - deployment.yaml
 - service.yaml
 - route.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- digest: sha256:baeca1ea66d89c6cc9ae31693b8f562e5f78d250cc76e9fd6d1833238193db62
+  name: quay.io/rhdevelopers/quinoa-wind-turbine
