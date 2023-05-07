@@ -51,7 +51,7 @@ spec:
             secretKeyRef:
               key: developer-user-password
               name: quinoa-wind-turbine
-        image: quay.io/rhdevelopers/quinoa-wind-turbine:1.0.0
+        image: quay.io/sbergste/quinoa-wind-turbine:1.0.0
         imagePullPolicy: IfNotPresent
         name: quinoa-wind-turbine
         ports:

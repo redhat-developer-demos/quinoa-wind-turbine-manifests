@@ -1,0 +1,8 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+resources:
+- app-source-pvc.yaml 
+- build-cache-pvc.yaml 
+- git-update-deployment.yaml
+- maven-task-cached.yaml 
+- pipeline-cached.yaml
