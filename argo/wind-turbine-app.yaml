@@ -2,15 +2,15 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: wind-turbine
-  namespace: openshift-gitops
+  namespace: wind-turbine-race
 spec:
   destination:
-    namespace: demo
+    namespace: wind-turbine-race
     server: https://kubernetes.default.svc
   project: default
   source:
     path: k8s
-    repoURL: https://github.com/redhat-developer-demos/quinoa-wind-turbine-manifests
+    repoURL: https://github.com/stefan-bergstein/quinoa-wind-turbine-manifests
     targetRevision: main
   syncPolicy:
     automated:

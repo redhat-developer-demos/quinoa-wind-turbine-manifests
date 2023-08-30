@@ -14,15 +14,15 @@ metadata:
   name: quinoa-wind-turbine
 spec:
   progressDeadlineSeconds: 600
-  replicas: 5
-  revisionHistoryLimit: 10
+  replicas: 4
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: quinoa-wind-turbine
   strategy:
     rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
+      maxSurge: 50%
+      maxUnavailable: 50%
     type: RollingUpdate
   template:
     metadata:
@@ -41,7 +41,17 @@ spec:
             secretKeyRef:
               key: password
               name: infinispan-generated-secret
-        image: quay.io/rhdevelopers/quinoa-wind-turbine:1.0.0
+        - name: QUARKUS_SECURITY_USERS_EMBEDDED_PLAIN_TEXT
+          valueFrom:
+            secretKeyRef:
+              key: plain-text-password-enabled
+              name: quinoa-wind-turbine
+        - name: QUARKUS_SECURITY_USERS_EMBEDDED_USERS_DEVELOPER
+          valueFrom:
+            secretKeyRef:
+              key: developer-user-password
+              name: quinoa-wind-turbine
+        image: quay.io/sbergste/quinoa-wind-turbine:1.0.0
         imagePullPolicy: IfNotPresent
         name: quinoa-wind-turbine
         ports:

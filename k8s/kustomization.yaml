@@ -1,4 +1,5 @@
 resources:
+- secret.yaml
 - deployment.yaml
 - service.yaml
 - route.yaml
@@ -7,3 +8,5 @@ kind: Kustomization
 images:
 - digest: sha256:8f223fc920a4916414a88a83d07ce4c09d9a10e0a95798234b08ed807e0cc0f0
   name: quay.io/rhdevelopers/quinoa-wind-turbine
+- digest: sha256:34f7e7c7c9af051d393204d980d3e8dcaf7bbe436b0c30a3e36eb099b97e3bc9
+  name: quay.io/sbergste/quinoa-wind-turbine
